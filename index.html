@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>HTML - CSS - Introduction</title>
+        <link rel="stylesheet" href="style.css" />
+		<script src="main.js"></script>
+    </head>
+
+    <body>
+        <h1>HTML - CSS - Introduction</h1>
+
+        <h2>Intro - Comment fonctionne une page web?</h2>
+
+        <p>
+            Le navigateur (firefox, chrome, etc) va traduire un document HTML et CSS en page.
+            Pour créer une «page web» il faut ecrire du HTML
+        </p>
+        
+        <h2>HTML CSS, pourquoi 2 languages?</h2>
+
+        <h3>Le HTML, ou HyperText Markup Language</h3>
+        <p>
+            HTML est l’abréviation de HyperText Markup Language, soit en français « langage de balisage hypertexte ». <br/><br/>
+            Ce langage a été créé en 1991 et a pour fonction de structurer et de donner du sens à du contenu. <br/><br/>
+            Grâce au HTML, on va par exemple pouvoir indiquer au navigateur que tel texte doit être considéré comme un simple paragraphe ou que tel autre est un titre. <br/><br/>
+        </p>
+        
+        <h3>Le CSS, ou Cascading StyleSheets</h3>
+        <p>
+            CSS est le diminutif de Cascading StyleSheets, ou feuilles de styles en cascade. <br/><br/>
+            Le CSS a été créé en 1996 et a pour rôle de mettre en forme du contenu en lui appliquant ce qu’on appelle des styles. <br/><br/>
+            Le CSS va nous permettre par exemple de définir la taille, la couleur ou l’alignement d’un texte. <br/><br/>
+            Nous allons donc utiliser le CSS sur notre code HTML, afin d’enjoliver le résultat visuel final. <br/><br/>
+        </p>
+
+        <h2>Plutôt qu'un long discourt, comprendre en pratique</h2>
+        <p>
+            Nous allons maintenant, pour la suite, visualiser le code de cette page. <br/>
+            Deux solutions:
+            <ul>
+                <li>Cliquer droit dans la page et afficher la source</li>
+                <li>Dans notre cas on va ouvrir le fichier index.html avec notre éditeur préféré (nano, vim, emacs, bloc-note)</li>
+            </ul>
+
+            Mettons côte à côte la page dans le navigateur et le fichier dans l'éditeur pour pouvoir comparer les 2.
+        </p>
+        <p>
+            Nous pouvons voir dans le fichier des caractères entourés de < >, c'est ce qu'on appelle des balises.
+            Cela permet de donner du sens (semantique) à notre contenu. C'est une façon de dire au navigateur, ceci est un titre, ceci est un paragraphe.
+            Certaine balise s'utilise seule. La plupart du temps nous avons 2 balises:
+            <ul>
+                <li>une balise ouvrante  &lt;mabalise&gt; et</li>
+                <li>une balise fermante &lt;/mabalise&gt;</li>
+            </ul>
+            Entre ces 2 balises nous avons ce qu'on appelle un élément.
+        </p>
+
+        <h2>Exemples</h2>
+        <!-- Ceci est un commentaire -->
+        <!-- il n'apparait pas sur la page dans le navigateur -->
+        
+        <div class="exemple"><!-- ne pas tenir compte de cette balise pour le moment, nous y reviendrons plus tard -->
+            <h1>Ceci est un titre 1</h1>
+            <h2>Ceci est un titre 2</h2>
+            <p>Ceci est un paragraphe</p>
+        Ceci est une liste:
+            <ul>
+                <li>item 1</li>
+                <li>item 2</li>
+            </ul>
+            <div>Ceci est un block de contenu</div>
+        </div>
+
+        <h2>Styles</h2>
+
+        <p>
+            Nous avons maintenant une page web mais nous voulons lui donner plus de style (couleur, position, taille, etc).
+            C'est là que nous allons écrire du CSS.
+            Nous pouvons le faire directement dans le html comme ceci:
+        </p>
+        <div class="exemple">
+            <p style="color:green">Voilà du texte écrit en vert</p>
+            <p style="color:white;background-color:darkgrey;font-size:30px;">Voilà du texte écrit en blanc sur fond gris avec une taille de 30px</p>
+        </div>
+        <p>
+            C'est ce qu'on appelle du style inline. <br/>
+            Cette méthode d’écriture du CSS, bien qu’elle puisse parfois être pratique, n’est également pas recommandée et est à éviter tant que possible. <br/>
+            Sauf avis contraire, nous ne voulons pas voir cette méthode dans vos futures création. <br/>
+            En réalité nous avons 3 possibilités pour écrire du CSS:
+            <ul>
+                <li>Inline que nous venons de voir</li>
+                <li>Dans le fichier html dans une balise  &lt;style&gt; &lt;/style&gt; </li>
+                <li>Dans un fichier css externe. C'est cette dernière méthode qu'on va utiliser.</li>
+            </ul>
+        </p>
+        <h3>Fichier css</h3>
+        <p>
+            Dans le dossier vous pouvez ouvrir le fichier style.css. C'est ici que se trouve les styles de notre page.
+        </p>
+        <p>
+            Comment le navigateur le sait-il? Vous pouvez voir ligne 6 de notre fichier index.html: &lt;link rel="stylesheet" href="style.css" /&gt;
+        </p>
+        <p>
+            Vous pouvez voir que l'on a modifié le style des titres 1 et des paragraphe
+        </p>
+        <p>
+            Pour certains éléments similair nous pouvons aussi ajouter des classes dans notre html pour pouvoir styler ces éléments. Nous rajoutons class="maclasse" comme attribut de notre balise html. Ensuite en css nous mettons un . devant le nom de la class pour pouvoir lui appliquer un style. Comme pour notre div exemple.
+        </p>
+        <div class="exemple">
+            Voici mon div exemple
+            <p>
+                Ceci est un paragraphe dans un div exemple <br/>
+                Grace à la notion de cascade du css je peux modifier le style de mon paragraphe. Voir le css
+            </p>
+        </div>
+        
+        <h2>Javascript</h2>
+        <p>
+            Le Javascript que nous apprenons par ailleurs peut être également très utile. <br/>
+            Nous pouvons l'intégrer comme pour le css inline, avec une balise script ou dans un fichier externe. <br/>
+            Ligne 7 du fichier index.html nous avons la balise &lt;script src="main.js"&gt; &lt;/script&gt; <br/>
+            Vous pouvez testez l'appelle à la fonction coucou du fichier main.js sur ce bouton: <br/>
+            <button onclick="coucou()">Coucou</button> <br/>
+        </p>
+
+        <h2>Conclusion</h2>
+        <p>
+            Vous avez eu un premier aperçu du fonctionnement d'une page html. <br/>
+            Ce n'est pas nécessaire d'apprendre par cœur toutes les balises existantes. En pratique nous n'en utilisons qu'un nombre limité et vous vous les approprierez petit à petit. Vous avez déjà vu les principales:
+            <ul>
+                <li>&lt;h1&gt; &lt;h2&gt; &lt;h3&gt; (titre)</li>
+                <li>&lt;p&gt; (paragraphe)</li>
+                <li>&lt;div&gt; (block)</li>
+                <li>&lt;ul&gt;&lt;li&gt; (liste)</li>
+                <li>&lt;html&gt;&lt;head&gt;&lt;body&gt;</li>
+                <li>&lt;link rel="stylesheet" href="style.css" /&gt; (inclure un fichier css)</li>
+            </ul>
+        </p>
+        <p>
+            Pour le css par contre un apprentissage sera nécessaire. Un grand nombre de propriétés sont utilisées. Certaines sont assez simple d'utilisation, d'autres nécessite de se familiariser avec leur fonctionnement. Le positionnement des éléments par exemple nécessite un peu de pratique.
+        </p>
+        <h2>La suite</h2>
+        <p>Et maintenant pratiquons:</p>
+        <p>Activité 2</p>
+    </body>
+</html>
+
